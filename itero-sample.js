@@ -100,7 +100,7 @@ var SignupController = function ($scope, $http, $modal) {
 
     var paymentConfig = {
         // REQUIRED. The initial order to be displayed. This will be requested immediately upon load
-        publicApiKey: "529f114351f459f55874f79b",
+        publicApiKey: "535673471d8dd00df0565617",
 
         // OPTIONAL. Overwrite the handling of the 3d-secure iframes. Comment out these 
         // two lines to see what happens without (essentially the same, but not customizable).
@@ -122,7 +122,7 @@ var SignupController = function ($scope, $http, $modal) {
         console.log(errorData);
     });
 
-    var initialCart = { planVariantId: "529f20ed51f4591c2000e946", components: [{ "id": "529f209b51f4591c2000e942", "Quantity": 1}] };
+    var initialCart = { planVariantId: "53567b431d8dd00df056564f" };
     self.iteroInstance = new IteroJS.Signup();
     self.iteroInstance.preview(initialCart, $scope.customerData, function (success) {
         $scope.$apply(function () {
