@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Itero.JS Sample</title>
-    <!-- This sample uses angularjs and bootstrap, but you don't have to -- itero.js has no external dependencies, except 
+    <!-- This sample uses angularjs and bootstrap, but you don't have to -- itero.js has no external dependencies, except
     for certain payment providers. It will load those files asynchronously and only if needed. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="styles/bootstrap.css" />
@@ -25,8 +25,8 @@
           <div class="modal-footer">
             <button type="button" data-ng-click="cancel()" class="btn">Cancel</button>
           </div>
-    </script> 
-    
+    </script>
+
     <div class="container" data-ng-controller="SignupController">
     <div data-ng-show="isSuccess" style="text-align: center;" data-ng-cloak>
         <h1>Signup Successful!</h1>
@@ -39,15 +39,15 @@
         <div>
             <h1>Sign Up</h1>
             <p class="lead">
-                This is an <a href="http://developer.pactas.com/Docs/IteroJS">IteroJS</a> sample signup form using 
-                <a href="http://angularjs.org">AngularJS</a>, <a href="http://getbootstrap.com">Bootstrap3</a> and 
+                This is an <a href="http://developer.pactas.com/Docs/IteroJS">IteroJS</a> sample signup form using
+                <a href="http://angularjs.org">AngularJS</a>, <a href="http://getbootstrap.com">Bootstrap3</a> and
                 <a href="http://angular-ui.github.io">Angular-UI</a>.
             </p>
             <div class="clearfix"></div>
 
             <!-- As long as IteroJS hasn't fully loaded, we'll hide the signup form because we don't have a list of
                  components and a price, nor do we know which payment  input fields to show yet.
-                 HEADS UP: We might provide a hook that informs you as soon as the initial order was processed, even if 
+                 HEADS UP: We might provide a hook that informs you as soon as the initial order was processed, even if
                  the payment information is still pending.
             -->
             <div data-ng-show="!paymentReady"  class="text-center" style="font-size: 36px; padding: 50px;"  data-ng-cloak>
@@ -113,7 +113,7 @@
                 </select>
             </div>
 
-            <!-- The abstraction of payment methods starts to leak here (hardcoded strings). We'll improve this soon, 
+            <!-- The abstraction of payment methods starts to leak here (hardcoded strings). We'll improve this soon,
                  but of course a direct debit form is different from a credit card form -->
             <div class="payment-elv" data-ng-show="paymentData.bearer=='Debit:Paymill'">
                 <div class="row">
@@ -136,7 +136,7 @@
 
             <div class="payment-cc" data-ng-show="paymentData.bearer=='CreditCard:Paymill'">
                 <div class="row">
-                    <!-- Note that the input fields don't have a 'name' set, rendering it impossible for the browser 
+                    <!-- Note that the input fields don't have a 'name' set, rendering it impossible for the browser
                          to post these fields even if something went wrong in our first line of defense of not having
                          an action on the form. -->
                     <div class="form-group col-sm-12">
@@ -144,7 +144,7 @@
                         <input data-ng-model="paymentData.cardHolder" required type="text" class="form-control" id="cardholder" placeholder="Card Holder" />
                     </div>
 
-                    <div class="form-group col-xs-8 col-sm-4">  
+                    <div class="form-group col-xs-8 col-sm-4">
                         <label for="ccno" class="sr-only control-label">Credit Card Number</label>
                         <input data-ng-model="paymentData.cardNumber" required maxlength="16" type="text" class="form-control" id="ccno" placeholder="Credit Card Number" />
                     </div>
@@ -153,7 +153,7 @@
                         <label for="cvc" class="sr-only control-label">CVC</label>
                         <input data-ng-model="paymentData.cvc" maxlength="3" required type="text" class="form-control" id="cvc" placeholder="CVC" />
                     </div>
-                
+
                     <div class="col-xs-4 col-sm-2">
                         <label class="col-sm-2 control-label">Valid Through</label>
                     </div>
@@ -202,7 +202,7 @@
                     <button type="submit" data-ng-disabled="!paymentReady || !order || signupRunning" class="btn btn-lg btn-success">Sign Up</button>
                 </div>
                 <div class="col-sm-6" style="padding: 12px;" data-ng-show="signupRunning">
-                <div style="width:25px; height:25px; display: inline-block; background: transparent url('spinner25.gif')";></div> 
+                <div style="width:25px; height:25px; display: inline-block; background: transparent url('spinner25.gif')";></div>
                 <span style="line-height: 25px;">processing order, please wait...</span></div>
                 </div>
             </div>

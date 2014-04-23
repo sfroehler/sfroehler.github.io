@@ -102,7 +102,7 @@ var SignupController = function ($scope, $http, $modal) {
         // REQUIRED. The initial order to be displayed. This will be requested immediately upon load
         publicApiKey: "535673471d8dd00df0565617",
 
-        // OPTIONAL. Overwrite the handling of the 3d-secure iframes. Comment out these 
+        // OPTIONAL. Overwrite the handling of the 3d-secure iframes. Comment out these
         // two lines to see what happens without (essentially the same, but not customizable).
         // Only applies to paymill. You might want to read paymill's documentation on the subject.
         "popupCreate": tdsInit,
